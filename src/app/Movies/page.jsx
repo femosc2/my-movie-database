@@ -1,14 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import getMovieData from "../../api/getMovieData"
 import AddMovie from "../components/AddMovie";
 import Button from "../components/Button";
 import MovieList from "../components/MovieList";
 
-export default function MovieListPage() {
+const MovieListPage = () => {
   const [movies, setMovies] = useState([
     { title: "Star Wars" },
     { title: "Inglorious Basterds" },
   ]);
+
+  useEffect(() => {
+    getMovieData("Star wars");
+  }, []);
 
   const addMovie = (movie) => {
     setMovies([...movies, movie]);
@@ -24,3 +29,5 @@ export default function MovieListPage() {
     </main>
   );
 }
+
+export default MovieListPage;
