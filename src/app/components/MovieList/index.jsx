@@ -1,15 +1,30 @@
 import Movie from "./Movie";
+import { StyledMovieList, StyledMovieSection } from "./styles";
 
 const MovieList = (props) => {
 
   return (
-    <ul>
-      <li>
-        {props.movies.map((movie) => {
-          return <Movie key={movie.Title} title={movie.Title} removeMovie={props.removeMovie} />;
-        })}
-      </li>
-    </ul>
+    <StyledMovieSection>
+      {props.movies.length ? (
+        <StyledMovieList>
+          <li>
+            {props.movies.map((movie) => {
+              return (
+                <Movie
+                  key={movie.title}
+                  title={movie.title}
+                  removeMovie={props.removeMovie}
+                  addMovie={props.addMovie}
+                  type={props.type}
+                />
+              );
+            })}
+          </li>
+        </StyledMovieList>
+      ) : (
+        <h2>No movies found!</h2>
+      )}
+    </StyledMovieSection>
   );
 };
 

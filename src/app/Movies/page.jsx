@@ -3,7 +3,7 @@ import { useState } from "react";
 import getMovieData from "../../api/getMovieData"
 import AddMovie from "../components/AddMovie";
 import MovieList from "../components/MovieList";
-import TextInput from "../components/TextInput";
+import { StyledMain } from "./styles";
 
 const MovieListPage = () => {
   const [movies, setMovies] = useState([
@@ -25,13 +25,11 @@ const MovieListPage = () => {
   }
 
   return (
-    <main>
-      <TextInput onChange={handleChange}/>
+    <StyledMain>
+      <h1>My Movies!</h1>
       <AddMovie addMovie={addMovie} />
-      <p> Hej13</p>
-      <p>Hej 14</p>
-      <MovieList movies={movies} removeMovie={removeMovie} />
-    </main>
+      <MovieList type={"list"} movies={movies} removeMovie={removeMovie} />
+    </StyledMain>
   );
 }
 

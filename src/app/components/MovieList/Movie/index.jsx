@@ -1,14 +1,20 @@
 import Button from "../../Button";
+import { StyledMovie } from "./styles";
 
 const Movie = (props) => {
   return (
-    <div>
+    <StyledMovie>
       <p>{props.title}</p>
       <Button
-        text={"remove"}
-        handleClick={() => props.removeMovie(props.title)}
+        text={props.type === "list" ? "Remove" : "Add"}
+        color={props.type === "list" ? "red" : "green"}
+        handleClick={() => {
+          props.type === "list"
+            ? props.removeMovie(props.title)
+            : props.addMovie(props.title);
+        }}
       />
-    </div>
+    </StyledMovie>
   );
 };
 
