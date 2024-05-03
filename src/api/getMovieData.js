@@ -5,9 +5,8 @@ const getMovieData = (movieTitle) => {
         .then(response => response.json())
         .then(data => {
             // Process the movie data here
-            const resData = JSON.stringify(data);
-            console.log(resData);
-            return resData;
+            console.log(data);
+            return data.Search;
         })
         .catch(error => {
             // Handle any errors here

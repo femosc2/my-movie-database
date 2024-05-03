@@ -1,18 +1,15 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import getMovieData from "../../api/getMovieData"
 import AddMovie from "../components/AddMovie";
 import MovieList from "../components/MovieList";
+import TextInput from "../components/TextInput";
 
 const MovieListPage = () => {
   const [movies, setMovies] = useState([
     { title: "Star Wars" },
     { title: "Inglorious Basterds" },
   ]);
-
-  useEffect(() => {
-    getMovieData("Star wars");
-  }, []);
 
   const addMovie = (movie) => {
     setMovies([...movies, movie]);
@@ -22,8 +19,14 @@ const MovieListPage = () => {
     setMovies(movies.filter((movie) => movie.title !== movieToBeRemoved));
   };
 
+  const handleChange = (event) => {
+    if(event.target.value.length > 3)
+      setMovies(getMovieData(event.target.value));
+  }
+
   return (
     <main>
+      <TextInput onChange={handleChange}/>
       <AddMovie addMovie={addMovie} />
       <p> Hej13</p>
       <p>Hej 14</p>
