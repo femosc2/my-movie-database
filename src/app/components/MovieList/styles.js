@@ -7,5 +7,5 @@ export const StyledMovieList = styled.ul`
 
 export const StyledMovieSection = styled.section`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 `;

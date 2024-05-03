@@ -5,17 +5,19 @@ const MovieList = (props) => {
 
   return (
     <StyledMovieSection>
-      {props.movies.length ? (
+      {props.type === "list" && <h2>My Movies</h2>}
+      {props.movies?.length ? (
         <StyledMovieList>
           <li>
             {props.movies.map((movie) => {
               return (
                 <Movie
-                  key={movie.title}
-                  title={movie.title}
+                  key={movie.Title}
+                  title={movie.Title}
                   removeMovie={props.removeMovie}
                   addMovie={props.addMovie}
                   type={props.type}
+                  posterHref={movie.Poster}
                 />
               );
             })}

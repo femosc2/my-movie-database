@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 export const StyledMain = styled.main`
   display: flex;
-  flex-direction: column;
+  padding: 0 5rem;
+  flex-direction: row;
+  justify-content: space-between;
   min-height: 100vh;
   align-content: center;
-  text-align: center;
+  text-align: left;
 `;

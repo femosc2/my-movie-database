@@ -1,9 +1,10 @@
 import Button from "../../Button";
-import { StyledMovie } from "./styles";
+import { StyledMovie, StyledImage } from "./styles";
 
 const Movie = (props) => {
   return (
     <StyledMovie>
+      <StyledImage src={props.posterHref} alt={props.title} />
       <p>{props.title}</p>
       <Button
         text={props.type === "list" ? "Remove" : "Add"}
@@ -11,7 +12,7 @@ const Movie = (props) => {
         handleClick={() => {
           props.type === "list"
             ? props.removeMovie(props.title)
-            : props.addMovie(props.title);
+            : props.addMovie({Title: props.title, Poster: props.posterHref});
         }}
       />
     </StyledMovie>
