@@ -1,7 +1,11 @@
 import { StyledButton } from "./styles";
 
 const Button = (props) => {
-  return <StyledButton>{props.text}</StyledButton>;
+  return (
+    <StyledButton onClick={() => props.handleClick()}>
+      {props.text}
+    </StyledButton>
+  );
 };
 
 export default Button;
