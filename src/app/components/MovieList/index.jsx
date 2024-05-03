@@ -9,13 +9,18 @@ const MovieList = (props) => {
           <li>
             {props.movies.map((movie) => {
               return (
-                <Movie title={movie.title} removeMovie={props.removeMovie} />
+                <Movie
+                  title={movie.title}
+                  removeMovie={props.removeMovie}
+                  addMovie={props.addMovie}
+                  type={props.type}
+                />
               );
             })}
           </li>
         </StyledMovieList>
       ) : (
-        <h2>You have not added any movies, add one above!</h2>
+        <h2>No movies found!</h2>
       )}
     </StyledMovieSection>
   );

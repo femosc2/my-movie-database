@@ -22,7 +22,7 @@ export default function MovieListPage() {
     <StyledMain>
       <h1>My Movies!</h1>
       <AddMovie addMovie={addMovie} />
-      <MovieList movies={movies} removeMovie={removeMovie} />
+      <MovieList type={"list"} movies={movies} removeMovie={removeMovie} />
     </StyledMain>
   );
 }

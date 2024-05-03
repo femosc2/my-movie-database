@@ -1,3 +1,3 @@
 export default function Home() {
-  return <main>Start Sidan!</main>;
+  return <main>Startsidan!</main>;
 }

@@ -6,9 +6,13 @@ const Movie = (props) => {
     <StyledMovie>
       <p>{props.title}</p>
       <Button
-        text={"Remove"}
-        color={"red"}
-        handleClick={() => props.removeMovie(props.title)}
+        text={props.type === "list" ? "Remove" : "Add"}
+        color={props.type === "list" ? "red" : "green"}
+        handleClick={() => {
+          props.type === "list"
+            ? props.removeMovie(props.title)
+            : props.addMovie(props.title);
+        }}
       />
     </StyledMovie>
   );
