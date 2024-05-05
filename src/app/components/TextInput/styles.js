@@ -6,6 +6,7 @@ const StyledInput = styled.input`
   padding: 10px;
   font-size: 18px;
   margin: 10px 0;
+  width: 500px;
 `;
 
 export default StyledInput;

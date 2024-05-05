@@ -7,8 +7,22 @@ import { StyledMain } from "./styles";
 
 const Home = () => {
   const [movies, setMovies] = useState([
-    { Title: "Star Wars", Poster: "https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg" },
-    { Title: "Inglorious Basterds", Poster: "https://m.media-amazon.com/images/M/MV5BMDIxYTZmNjQtMmMxYi00MDkyLWJjZDYtYTM1NTA3ZWY2MTUwXkEyXkFqcGdeQXVyMjA3NDg2Mzg@._V1_SX300.jpg" },
+    {
+      Title: "Star Wars: Episode IV - A New Hope",
+      Year: "1977",
+      imdbID: "tt0076759",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg",
+    },
+    {
+      Title: "Inglourious Basterds",
+      Year: "2009",
+      imdbID: "tt0361748",
+      Type: "movie",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BOTJiNDEzOWYtMTVjOC00ZjlmLWE0NGMtZmE1OWVmZDQ2OWJhXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
+    },
   ]);
 
   const addMovie = (movie) => {
@@ -23,11 +37,16 @@ const Home = () => {
     <>
       <Header />
       <StyledMain>
-        <AddMovie addMovie={addMovie} updateMovies={setMovies} movies={movies} />
+        <AddMovie
+          addMovie={addMovie}
+          updateMovies={setMovies}
+          movies={movies}
+        />
+        <hr />
         <MovieList type={"list"} movies={movies} removeMovie={removeMovie} />
       </StyledMain>
     </>
   );
-}
+};
 
 export default Home;

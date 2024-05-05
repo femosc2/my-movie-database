@@ -6,4 +6,8 @@ export const StyledButton = styled.button`
   min-height: 50px;
   min-width: 100px;
   border: none;
+  transition: 0.5s;
+  &:hover {
+    filter: brightness(150%);
+  }
 `;

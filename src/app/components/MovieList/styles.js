@@ -8,4 +8,7 @@ export const StyledMovieList = styled.ul`
 export const StyledMovieSection = styled.section`
   display: flex;
   flex-direction: column;
+  > h2 {
+    text-align: center;
+  }
 `;
