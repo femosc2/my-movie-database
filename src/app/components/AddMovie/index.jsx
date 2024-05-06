@@ -16,7 +16,7 @@ const AddMovie = (props) => {
 
   return (
     <StyledSection>
-      <h2>Search movie</h2>
+      <h2>Sök efter film!</h2>
       <TextInput onChange={handleChange} />
       <MovieList movies={movieResults} addMovie={props.addMovie} />
     </StyledSection>

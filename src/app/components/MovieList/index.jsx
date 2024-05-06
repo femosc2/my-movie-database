@@ -4,7 +4,7 @@ import { StyledMovieList, StyledMovieSection } from "./styles";
 const MovieList = (props) => {
   return (
     <StyledMovieSection>
-      {props.type === "list" && <h2>My Movies</h2>}
+      {props.type === "list" && <h2>Mina filmer</h2>}
       {props.movies?.length ? (
         <StyledMovieList>
           <li>
@@ -23,7 +23,7 @@ const MovieList = (props) => {
           </li>
         </StyledMovieList>
       ) : (
-        <h2>No movies found!</h2>
+        <h2>Inga filmer hittade!</h2>
       )}
     </StyledMovieSection>
   );
