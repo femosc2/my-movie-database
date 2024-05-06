@@ -9,5 +9,6 @@ export const StyledButton = styled.button`
   transition: 0.5s;
   &:hover {
     filter: brightness(150%);
+    cursor: pointer;
   }
 `;
