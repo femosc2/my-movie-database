@@ -12,6 +12,7 @@ const MovieList = (props) => {
               return (
                 <Movie
                   key={movie.Title + index}
+                  index={index}
                   title={movie.Title}
                   removeMovie={props.removeMovie}
                   addMovie={props.addMovie}

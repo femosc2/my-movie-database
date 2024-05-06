@@ -29,8 +29,10 @@ const Home = () => {
     setMovies([...movies, movie]);
   };
 
-  const removeMovie = (movieToBeRemoved) => {
-    setMovies(movies.filter((movie) => movie.Title !== movieToBeRemoved));
+  const removeMovie = (indexToRemove) => {
+    const updatedMovies = [...movies];
+    updatedMovies.splice(indexToRemove, 1);
+    setMovies(updatedMovies);
   };
 
   return (

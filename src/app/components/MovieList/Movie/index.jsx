@@ -11,7 +11,7 @@ const Movie = (props) => {
         color={props.type === "list" ? "red" : "green"}
         handleClick={() => {
           props.type === "list"
-            ? props.removeMovie(props.title)
+            ? props.removeMovie(props.index)
             : props.addMovie({ Title: props.title, Poster: props.posterHref });
         }}
       />
